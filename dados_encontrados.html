@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados registrados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .dados_div {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .dados_div h2 {
+            margin-bottom: 20px;
+        }
+
+        .dados_div p {
+            margin: 5px 0;
+        }
+
+        .dados_div button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dados_div button:hover {
+            background-color: #28a746e3;
+        }
+
+        #dados {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dados_div">
+        <h2>Dados do Veículo</h2>
+        <div id="dados"></div>
+        <button onclick="voltar()">Voltar</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dadosDiv = document.getElementById('dados');
+            const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+            if (usuario) {
+                dadosDiv.innerHTML = `
+                    <p><strong>Proprietário:</strong> ${usuario.dono}</p>
+                    <p><strong>Marca:</strong> ${usuario.marca}</p>
+                    <p><strong>Modelo:</strong> ${usuario.modelo}</p>
+                    <p><strong>Ano:</strong> ${usuario.ano}</p>
+                    <p><strong>RENAVAM:</strong> ${usuario.renavam}</p>
+                    <p><strong>Placa:</strong> ${usuario.placa}</p>
+                    <p><strong>Cor:</strong> ${usuario.cor}</p>
+                `;
+            } else {
+                dadosDiv.innerHTML = '<p>Dados não encontrados.</p>';
+            }
+        });
+
+        function voltar() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

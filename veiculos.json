@@ -1,0 +1,76 @@
+{
+    "veiculos": [
+        {
+            "dono": "Laura Rocha Rodrigues",
+            "marca": "Lotus",
+            "modelo": "Elan S-2 1.6 16V",
+            "ano": "1995",
+            "renavam": "40173060896",
+            "placa": "MWQ-7092",
+            "cor": "Vermelho"
+        },
+        {
+            "dono": "Emilly Fernandes Cavalcanti",
+            "marca": "Rolls-Royce",
+            "modelo": "Ghost ll 6.6 V12 Aut.",
+            "ano": "2015",
+            "renavam": "44007954265",
+            "placa": "MWX-3951",
+            "cor": "Bege"
+        },
+        {
+            "dono": "Melissa Fernandes Ferreira",
+            "marca": "Walk",
+            "modelo": "Buggy Walk Sport 1.6 8V 58cv",
+            "ano": "2005",
+            "renavam": "41333886949",
+            "placa": "JWD-1694",
+            "cor": "Prata"
+        },
+        {
+            "dono": "Tiago Lima Almeida",
+            "marca": "Jaguar",
+            "modelo": "XJ-12 Conv.",
+            "ano": "1995",
+            "renavam": "42288520284",
+            "placa": "HYO-6992",
+            "cor": "Branco"
+        },
+        {
+            "dono": "Otávio Cunha Cardoso",
+            "marca": "JAC",
+            "modelo": "J3 Brasil1.4 16V 5p Mec.",
+            "ano": "2012",
+            "renavam": "66366646896",
+            "placa": "HTL-0401",
+            "cor": "Laranja"
+        },
+        {
+            "dono": "Gabriela Correia Almeida",
+            "marca": "ASTON MARTIN",
+            "modelo": "Rapide 6.0 V12 477cv",
+            "ano": "2012",
+            "renavam": "73427676407",
+            "placa": "HOT-6406",
+            "cor": "Bege"
+        },
+        {
+            "dono": "Matheus Barbosa Goncalves",
+            "marca": "Hyundai",
+            "modelo": "HB20 R spec 1.6 Flex 16V Aut.",
+            "ano": "2016",
+            "renavam": "04008278663",
+            "placa": "JIS-5293",
+            "cor": "Dourado"
+        },
+        {
+            "dono": "Leonor Silva Correia",
+            "marca": "Suzuki",
+            "modelo": "Grand Vitara S. EDITI.  2.0 16V 4x2 Aut.",
+            "ano": "2015",
+            "renavam": "46009447154",
+            "placa": "DWO-2408",
+            "cor": "Cinza"
+        }
+    ]
+}

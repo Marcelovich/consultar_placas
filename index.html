@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .login_div {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login_div h2 {
+            margin-bottom: 20px;
+        }
+
+        .login_div input {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login_div button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .login_div button:hover {
+            background-color: #28a746e3;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login_div">
+        <h2>Consultar placas</h2>
+        <input type="text" id="placa" placeholder="Digite sua placa" required>
+        <button onclick="login()">Pesquisar</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        async function login() {
+            const placa = document.getElementById('placa').value.toUpperCase();
+            try {
+                const resposta = await fetch('veiculos.json');
+                const data = await resposta.json();
+                const usuarios = data.veiculos;
+                const usuario = usuarios.find(u => u.placa === placa);
+
+                const messageDiv = document.getElementById('message');
+                if (usuario) {
+                    localStorage.setItem('usuario', JSON.stringify(usuario));
+                    window.location.href = 'dados_encontrados.html';
+                } else {
+                    messageDiv.textContent = 'Placa não encontrada.';
+                    messageDiv.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Error fetching the JSON file:', error);
+                const messageDiv = document.getElementById('message');
+                messageDiv.textContent = 'Erro ao buscar os dados. Tente novamente mais tarde.';
+                messageDiv.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>
